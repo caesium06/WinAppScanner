@@ -73,3 +73,46 @@ function Get-InstalledAppDetails {
 
     return $results | Sort-Object Name
 }
+
+<#
+.SYNOPSIS
+    Retrieves installed application details from a Windows device.
+
+.DESCRIPTION
+    The Get-InstalledAppDetails function lists installed applications from all major
+    Windows installation types, including:
+
+    - Win32 programs (EXE/MSI)
+    - 32-bit and 64-bit apps
+    - Per-user installs
+    - System-wide installs
+    - Microsoft Store / UWP / MSIX apps
+
+    It combines registry-based discovery with Appx package enumeration.
+
+.USAGE
+
+    1. Load the script into the current PowerShell session:
+
+        . "C:\Scripts\Get-InstalledAppDetails.ps1"
+
+       NOTE: The dot + space is required.
+
+    2. Show all installed applications:
+
+        Get-InstalledAppDetails
+
+    3. Search for a specific application:
+
+        Get-InstalledAppDetails -NameLike "chrome"
+
+    4. Export results:
+
+        Get-InstalledAppDetails | Export-Csv "InstalledApps.csv" -NoTypeInformation
+
+.NOTES
+    - Run PowerShell as Administrator to see system-wide applications.
+    - Run as the target user to see per-user installs.
+    - Some applications may not include uninstall strings or install paths
+      depending on how the vendor registered the software.
+#>
