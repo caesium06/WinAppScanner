@@ -191,7 +191,8 @@ $allColumns = @(
     "Scope",
     "AppId",
     "InstallDate",
-    "RegistryKey"
+    "RegistryKey",
+    "AppType"
 )
 $checkedColumns = @("Name","Version","Publisher") # default visible
 
