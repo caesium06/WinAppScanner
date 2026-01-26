@@ -3,7 +3,7 @@
 Windows App Inventory and Management Tool (PowerShell + GUI)
 
 .DESCRIPTION
-This script provides a complete tool to list, search, and manage installed applications on Windows. 
+This script provides a complete tool to list, search, and manage installed applications on Windows.
 It supports both **Win32** and **UWP apps**. You can use it in two ways:
 
 1. **PowerShell functions** directly in the console.
@@ -147,7 +147,7 @@ $textSearch.Size = New-Object System.Drawing.Size(250,25)
 
 # --- Buttons ---
 $buttonScan = New-Object System.Windows.Forms.Button
-$buttonScan.Text = "Scan Installed Apps"
+$buttonScan.Text = "Load App List"
 $buttonScan.Size = New-Object System.Drawing.Size(180,30)
 $buttonScan.Location = New-Object System.Drawing.Point(340,8)
 
@@ -359,4 +359,3 @@ $menuUninstallQuiet.Add_Click({
 # --- Show Form ---
 $form.Add_Shown({ $form.Activate() })
 [void]$form.ShowDialog()
-
